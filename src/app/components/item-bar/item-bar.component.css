@@ -1,0 +1,19 @@
+.items-nav-list {
+  display: flex;
+  flex-direction: row;
+}
+.mat-list-item-content {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+}
+section {
+  flex-direction: row;
+}
+
+.button-row {
+  justify-content: left;
+  width: auto;
+  /*justify-content: space-evenly;*/
+  display: flex;
+}

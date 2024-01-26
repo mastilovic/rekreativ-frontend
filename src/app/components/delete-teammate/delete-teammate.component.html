@@ -1,0 +1,17 @@
+<form class="example-form" [formGroup]="deleteForm">
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>Teammate name</mat-label>
+      <input matInput placeholder="Teammate name" formControlName='name' (input)="findByName()">
+
+    </mat-form-field>
+    <div class="teammate-div" *ngIf="teammate else noData">
+      {{ teammate | json }}
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onDelete()">Delete</button>
+</form>
+
+<ng-template #noData>
+  <div>No teammates found!</div>
+</ng-template>

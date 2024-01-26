@@ -1,0 +1,24 @@
+<p>teammate-detail works!</p>
+<form class="example-form" [formGroup]="findForm">
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>Teammate name</mat-label>
+      <input matInput placeholder="Teammate name"
+             name="search"
+             [formControl]="searchControl">
+    </mat-form-field>
+    <br>
+    <div class="teammate-div" *ngIf="teammate?.name else noData">
+      {{ teammate.id | json }}
+      {{ teammate.name | json }}
+      {{ teammate.team | json }}
+      {{ teammate.wins | json }}
+      {{ teammate.winRate | json }}
+      {{ teammate.totalGamesPlayed | json }}
+    </div>
+  </div>
+</form>
+
+<ng-template #noData>
+  <div>No teammates found!</div>
+</ng-template>

@@ -1,0 +1,9 @@
+<p>team works!</p>
+
+<mat-list *ngIf="teams !== undefined && teams.length > 0; else noData">
+  <mat-list-item  *ngFor = 'let team of teams'>{{ team | json }}</mat-list-item>
+</mat-list>
+
+<ng-template #noData>
+  <div>No teams found!</div>
+</ng-template>

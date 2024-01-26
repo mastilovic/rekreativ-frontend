@@ -1,0 +1,52 @@
+.example-container {
+  height: 100vh;
+  display: flex;
+}
+
+mat-drawer {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+mat-drawer-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.side-tabs {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Your existing styles */
+
+/* Add styling for the button in the sidebar */
+.sidebar-button {
+  display: block;
+  width: 100%; /* Make the button fill the width of the sidebar */
+  /*margin-top: 10px; !* Adjust margin as needed *!*/
+  background-color: #333333; /* Button background color */
+  color: white; /* Button text color */
+  text-align: left;
+}
+
+.sidebar-button:hover {
+  background-color: #808080; /* Button background color on hover */
+}
+
+.selected {
+  background-color: #3498db; /* Set your desired highlight color */
+  color: #fff; /* Set your desired text color for the highlighted button */
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+mat-grid-list {
+  height: 100%;
+}

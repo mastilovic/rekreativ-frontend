@@ -1,0 +1,17 @@
+.left {
+  float: left;
+  display: flex;
+  width: auto;
+}
+
+.right {
+  float: right;
+  justify-content: end;
+  width: auto;
+}
+
+.main {
+  float: right;
+  display: flex;
+  width: 50%;
+}
