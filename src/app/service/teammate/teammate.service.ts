@@ -11,7 +11,7 @@ export class TeammateService {
   constructor(private http: HttpClient) {
   }
 
-  getTeammates(): Observable<any> {
+  getTeammates(): Observable<Teammate[]> {
     return this.http.get<any>('http://localhost:8080/api/v1/teammate/get/all');
   }
 

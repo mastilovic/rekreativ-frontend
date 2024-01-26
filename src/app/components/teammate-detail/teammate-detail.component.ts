@@ -14,7 +14,6 @@ export class TeammateDetailComponent implements OnInit, OnDestroy {
   teammate: Teammate;
   sub: Subscription = new Subscription();
   findForm: FormGroup;
-  loading = false;
   searchControl = new FormControl();
 
   constructor(private teammateService: TeammateService,
@@ -23,8 +22,7 @@ export class TeammateDetailComponent implements OnInit, OnDestroy {
     this.sub = this.setupSearchControl();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy() {
     console.log("IS SUB CLOSED: " + this.sub.closed)
@@ -36,8 +34,8 @@ export class TeammateDetailComponent implements OnInit, OnDestroy {
     return this.searchControl.valueChanges
       .pipe(
         debounceTime(700),
-        tap(() => (this.loading = true)),
         switchMap((query) => {
+          console.log("current value in switchmap: ", JSON.stringify(query));
           return this.teammateService.findByName(query)
             .pipe(
               catchError((error) => {
@@ -45,19 +43,12 @@ export class TeammateDetailComponent implements OnInit, OnDestroy {
                 return of({} as Teammate)
               })
             )
-          // return timer(300).pipe(
-          //   switchMap(() => this.teammateService.findByName(query)),
-          //   catchError((error) => {
-          //     console.error('Search failed:', error);
-          //     return of({} as Teammate);
-          //   })
-          // );
         }),
       )
       .subscribe({
         next: value => {
+          console.log("current value in next: ", JSON.stringify(value));
           this.teammate = value;
-          this.loading = false;
         },
         error: err => console.error("Error occurred in subscription:", err),
         complete: () => console.log("completed")

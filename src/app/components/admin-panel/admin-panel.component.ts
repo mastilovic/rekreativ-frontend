@@ -9,7 +9,8 @@ import {Router} from "@angular/router";
 })
 export class AdminPanelComponent implements OnInit {
 
-  selectedTabIndex = 0;
+  selectedTabIndex: number = 0;
+  currentPanel: string = "team";
 
   constructor() { }
 
@@ -18,5 +19,18 @@ export class AdminPanelComponent implements OnInit {
 
   onTabChanged(event: number) {
     this.selectedTabIndex = event;
+  }
+
+  setCurrentPanel(panel: string) {
+    if(panel==="teammate"){
+      this.currentPanel = "teammate";
+    }
+    else if(panel==="team"){
+      this.currentPanel = "team";
+    }
+    else if(panel==="matchup"){
+      this.currentPanel = "matchup";
+    }
+    this.currentPanel = "";
   }
 }

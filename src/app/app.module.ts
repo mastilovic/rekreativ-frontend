@@ -28,6 +28,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TeammateDetailComponent } from './components/teammate-detail/teammate-detail.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -47,21 +48,22 @@ import { TeammateDetailComponent } from './components/teammate-detail/teammate-d
     DeleteTeammateComponent,
     TeammateDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatGridListModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatTabsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatGridListModule,
+        MatTableModule
+    ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })

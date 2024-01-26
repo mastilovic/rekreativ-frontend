@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TeammateService} from "../../service/teammate/teammate.service";
 import {Subscription} from "rxjs";
+import {Teammate} from "../../models/teammate";
 
 @Component({
   selector: 'app-teammate',
@@ -9,7 +10,8 @@ import {Subscription} from "rxjs";
 })
 export class TeammateComponent implements OnInit, OnDestroy {
 
-  teammates: any = [];
+  displayedColumns: string[] = ["id", "name", "totalGamesPlayed", "wins", "winRate", "team"]
+  teammates: Teammate[] = [];
   sub: Subscription = new Subscription();
 
   constructor(private teammateService: TeammateService) { }

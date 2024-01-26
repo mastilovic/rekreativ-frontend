@@ -50,3 +50,27 @@ mat-grid-tile {
 mat-grid-list {
   height: 100%;
 }
+
+.admin-panel-teammate-table {
+  width: 50%;
+  display: flex;
+  float: left;
+}
+
+.admin-panel-single-teammate {
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-left: 2%;
+}
+
+.sidebar-button {
+  position: relative;
+  float: right;
+}
+
+.sidebar-button.selected {
+  width: 100%;
+  background-color: #f4f4f4;
+  color: #6c757d;
+}
