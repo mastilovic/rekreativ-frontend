@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        console.log("inside ngOnInit in register component");
     }
 
     ngOnDestroy(): void {

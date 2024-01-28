@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Login with your account!</h1>
+    <h1>Login!</h1>
     <form [formGroup]="loginForm">
         <div class="form-group">
             <label>username</label>
@@ -9,7 +9,7 @@
             <label>password</label>
             <input type="password" class="form-control" formControlName='password'>
         </div>
-        <button class="btn btn-primary" (click)="onLogin()">Sign in</button>
-        <a class="register" [routerLink]="['/register']">Don't have an account? Register.</a>
+        <button class="btn btn-primary" (click)="onLogin()">Sign In</button>
+        <a class="register" [routerLink]="['/register']">Don't have an account? Register!</a>
     </form>
 </div>

@@ -14,7 +14,7 @@ export class TeammateComponent implements OnInit, OnDestroy {
     displayedColumns: string[] = ["id", "name", "totalGamesPlayed", "wins", "winRate", "team"]
     teammates: Teammate[] = [];
     sub: Subscription = new Subscription();
-    isUserLoggedIn: boolean;
+    isUserLoggedIn: boolean = false;
 
     constructor(private teammateService: TeammateService,
                 private tokenStorageService: TokenStorageService) {

@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TeamService} from "../../service/team/team.service";
 import {Subscription} from "rxjs";
 import {Team} from "../../models/team";
+import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
 
 @Component({
     selector: 'app-team',
@@ -12,11 +13,14 @@ export class TeamComponent implements OnInit, OnDestroy {
 
     teams: Team[];
     sub: Subscription = new Subscription();
+    isUserLoggedIn: boolean = false;
 
-    constructor(private teamService: TeamService) {
+    constructor(private teamService: TeamService,
+                private tokenStorageService: TokenStorageService) {
     }
 
     ngOnInit(): void {
+        this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
         this.getTeams();
     }
 

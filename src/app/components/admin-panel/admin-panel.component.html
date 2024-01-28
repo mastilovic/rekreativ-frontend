@@ -1,13 +1,13 @@
 <p>admin-panel works!</p>
 <mat-drawer-container class="example-container" *ngIf="isUserLoggedIn else noData">
     <mat-drawer mode="side" opened>
-        <button mat-button class="sidebar-button" (click)="currentPanel = 'teammate'"
+        <button mat-button class="sidebar-button" (click)="switchPanel('teammate')"
                 [class.selected]="currentPanel === 'teammate'">Teammate Panel
         </button>
-        <button mat-button class="sidebar-button" (click)="currentPanel = 'team'"
+        <button mat-button class="sidebar-button" (click)="switchPanel('team')"
                 [class.selected]="currentPanel === 'team'">Team Panel
         </button>
-        <button mat-button class="sidebar-button" (click)="currentPanel = 'matchup'"
+        <button mat-button class="sidebar-button" (click)="switchPanel('matchup')"
                 [class.selected]="currentPanel === 'matchup'">Matchup Panel
         </button>
     </mat-drawer>
@@ -71,5 +71,7 @@
 </mat-drawer-container>
 
 <ng-template #noData>
-    <div>Unauthorized access</div>
+    <div>
+        <h1>401</h1>
+        Unauthorized access</div>
 </ng-template>

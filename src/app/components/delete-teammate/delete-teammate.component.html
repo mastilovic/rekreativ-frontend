@@ -1,17 +1,22 @@
-<form class="example-form" [formGroup]="deleteForm">
-  <div class="form-group">
-    <mat-form-field class="example-full-width">
-      <mat-label>Teammate name</mat-label>
-      <input matInput placeholder="Teammate name" [formControl]="searchControl">
+<div *ngIf="isUserLoggedIn else unauthorized">
+    <form class="example-form" [formGroup]="deleteForm">
+        <div class="form-group">
+            <mat-form-field class="example-full-width">
+                <mat-label>Teammate name</mat-label>
+                <input matInput placeholder="Teammate name" [formControl]="searchControl">
 
-    </mat-form-field>
-    <div class="teammate-div" *ngIf="teammate?.name else noData">
-      {{ teammate | json }}
-    </div>
-  </div>
-  <button class="btn btn-primary" (click)="onDelete()">Delete</button>
-</form>
+            </mat-form-field>
+            <div class="teammate-div" *ngIf="teammate?.name else noData">
+                {{ teammate | json }}
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="onDelete()">Delete</button>
+    </form>
+</div>
+<ng-template #unauthorized>
+    <div>Unauthorized access!</div>
+</ng-template>
 
 <ng-template #noData>
-  <div>No teammates found!</div>
+    <div>No teammates found!!</div>
 </ng-template>

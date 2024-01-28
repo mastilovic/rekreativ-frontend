@@ -1,6 +1,6 @@
 <div class="main">
   <div class="left">
-    <button mat-button [routerLink]="['']">home</button>
+    <button mat-button [routerLink]="['']">Home</button>
     <button mat-button *ngIf="isUserLoggedIn" [routerLink]="['panel']">Admin Panel</button>
 <!--    Have login/register and logout as separate buttons, or have them as single button? -->
     <button mat-raised-button *ngIf="!isUserLoggedIn" [routerLink]="['/login']">Login / Register</button>

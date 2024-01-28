@@ -27,9 +27,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit(): void {
+    console.log("inside ngOnInit in login component");
   }
 
   ngOnDestroy(): void {
+    console.log("inside ngOnDestroy in login component");
     console.log('is sub closed: ',this.sub.closed);
     this.sub.unsubscribe();
     console.log('is sub closed: ',this.sub.closed);

@@ -1,5 +1,22 @@
 <p>role works!</p>
 
-<mat-list>
-  <mat-list-item *ngFor = 'let role of roles'>{{ role | json }}</mat-list-item>
-</mat-list>
+<!--<mat-list>-->
+<!--  <mat-list-item *ngFor = 'let role of roles'>{{ role | json }}</mat-list-item>-->
+<!--</mat-list>-->
+
+<div class="outer" *ngIf="isUserLoggedIn else unauthorized">
+  <table class="table">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+    <tr *ngFor='let role of roles'>
+      <td> {{ role.id }}</td>
+      <td> {{ role.name }}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #unauthorized>
+  <div>Unauthorized access!</div>
+</ng-template>

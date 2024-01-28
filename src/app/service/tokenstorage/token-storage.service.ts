@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Router} from "@angular/router";
 
 const TOKEN_KEY = 'token';
 const USER_KEY = 'user';
@@ -8,7 +9,7 @@ const USER_KEY = 'user';
 })
 export class TokenStorageService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   public saveToken(token: string): void {
     localStorage.removeItem(TOKEN_KEY);
@@ -37,7 +38,14 @@ export class TokenStorageService {
     if(this.getToken() !== null) {
       return true;
     }
-
     return false;
+  }
+
+  handleUnauthorizedAccess(isUserLoggedIn: boolean) {
+    if(!isUserLoggedIn) {
+      this.removeTokenAndUser();
+      this.router.navigate([''])
+          .then(() => window.location.reload())
+    }
   }
 }

@@ -18,16 +18,12 @@ export class AdminPanelComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    console.log("calling ngOnInit in admin-panel component")
-    this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged()
-    this.handleUnauthorizedAccess(this.isUserLoggedIn);
+    console.log("calling ngOnInit in admin-panel component");
+    this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
+    this.tokenStorageService.handleUnauthorizedAccess(this.isUserLoggedIn);
   }
 
-  handleUnauthorizedAccess(isUserLoggedIn: boolean) {
-    if(!isUserLoggedIn) {
-      this.tokenStorageService.removeTokenAndUser();
-      this.router.navigate([''])
-          .then(() => window.location.reload())
-    }
+  switchPanel(panel: string): void {
+    this.currentPanel = panel;
   }
 }

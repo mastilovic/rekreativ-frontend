@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {catchError, debounceTime, distinctUntilChanged, of, Subscription, switchMap} from "rxjs";
 import {TeammateService} from "../../service/teammate/teammate.service";
 import {Teammate} from "../../models/teammate";
+import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
 
 @Component({
   selector: 'app-delete-teammate',
@@ -15,9 +16,11 @@ export class DeleteTeammateComponent implements OnInit, OnDestroy {
   sub: Subscription = new Subscription();
   teammate: Teammate;
   searchControl = new FormControl();
+  isUserLoggedIn: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
-              private teammateService: TeammateService) {
+              private teammateService: TeammateService,
+              private tokenStorageService: TokenStorageService) {
     this.deleteForm = formBuilder.group({
       name: ['', [ Validators.required ]]
     })
@@ -26,6 +29,8 @@ export class DeleteTeammateComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log("inside ngOnInit delete-component")
     this.sub = this.findByName();
+    this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
+    this.tokenStorageService.handleUnauthorizedAccess(this.isUserLoggedIn);
   }
 
   ngOnDestroy() {

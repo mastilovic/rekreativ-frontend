@@ -1,9 +1,10 @@
 <p>matches works!</p>
 
-<mat-list *ngIf="matches !== undefined && matches.length > 0 && isUserLoggedIn; else noData">
-  <mat-list-item  *ngFor = 'let match of matches'>{{ match | json }}</mat-list-item>
-</mat-list>
-
-<ng-template #noData>
-  <div>No matches found!</div>
+<div *ngIf="isUserLoggedIn; else unauthorized">
+    <mat-list *ngIf="matches !== undefined && matches.length > 0">
+        <mat-list-item *ngFor='let match of matches'>{{ match | json }}</mat-list-item>
+    </mat-list>
+</div>
+<ng-template #unauthorized>
+    <div>Unauthorized access!</div>
 </ng-template>

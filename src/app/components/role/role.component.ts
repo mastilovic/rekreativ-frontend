@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RoleService} from "../../service/role/role.service";
 import {Subscription} from "rxjs";
 import {Role} from "../../models/role";
+import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
 
 @Component({
   selector: 'app-role',
@@ -12,9 +13,14 @@ export class RoleComponent implements OnInit, OnDestroy {
 
   roles: Role[];
   sub: Subscription = new Subscription();
-  constructor(private roleService: RoleService) { }
+  isUserLoggedIn: boolean = false;
+
+
+  constructor(private roleService: RoleService,
+              private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
     this.getRoles();
   }
 

@@ -1,4 +1,22 @@
 <p>user works!</p>
-<mat-list>
- <mat-list-item *ngFor = 'let user of users'>{{ user | json}}</mat-list-item>
-</mat-list>
+<!--<mat-list>-->
+<!-- <mat-list-item *ngFor = 'let user of users'>{{ user | json}}</mat-list-item>-->
+<!--</mat-list>-->
+<div class="outer" *ngIf="isUserLoggedIn else unauthorized">
+ <table class="table">
+  <tr>
+   <th>username</th>
+   <th>roles</th>
+  </tr>
+  <tr *ngFor='let user of users'>
+   <td> {{ user.username }}</td>
+   <td> {{ user.roles | json }}</td>
+  </tr>
+ </table>
+</div>
+
+<ng-template #unauthorized>
+ <div>
+  <h1>401</h1>
+  Unauthorized access!</div>
+</ng-template>
