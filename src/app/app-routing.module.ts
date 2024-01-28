@@ -10,9 +10,11 @@ import {TeamComponent} from "./components/team/team.component";
 import {MatchesComponent} from "./components/matches/matches.component";
 import {CreateTeammateComponent} from "./components/create-teammate/create-teammate.component";
 import {AdminPanelComponent} from "./components/admin-panel/admin-panel.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'users', component: UserComponent},
   {path: 'roles', component: RoleComponent},

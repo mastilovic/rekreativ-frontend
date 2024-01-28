@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {Router} from "@angular/router";
+import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
 
 @Component({
   selector: 'app-admin-panel',
@@ -10,27 +11,23 @@ import {Router} from "@angular/router";
 export class AdminPanelComponent implements OnInit {
 
   selectedTabIndex: number = 0;
-  currentPanel: string = "team";
+  currentPanel: string = "teammate";
+  isUserLoggedIn: boolean = false;
 
-  constructor() { }
+  constructor(private tokenStorageService: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit(): void {
+    console.log("calling ngOnInit in admin-panel component")
+    this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged()
+    this.handleUnauthorizedAccess(this.isUserLoggedIn);
   }
 
-  onTabChanged(event: number) {
-    this.selectedTabIndex = event;
-  }
-
-  setCurrentPanel(panel: string) {
-    if(panel==="teammate"){
-      this.currentPanel = "teammate";
+  handleUnauthorizedAccess(isUserLoggedIn: boolean) {
+    if(!isUserLoggedIn) {
+      this.tokenStorageService.removeTokenAndUser();
+      this.router.navigate([''])
+          .then(() => window.location.reload())
     }
-    else if(panel==="team"){
-      this.currentPanel = "team";
-    }
-    else if(panel==="matchup"){
-      this.currentPanel = "matchup";
-    }
-    this.currentPanel = "";
   }
 }

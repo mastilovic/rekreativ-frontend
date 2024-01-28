@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
     const token = this.tokenStorageService.getToken();
 
     if (token != null && this.tokenExpired(token)) {
-      this.tokenStorageService.removeToken();
+      this.tokenStorageService.removeTokenAndUser();
       this.router.navigate([''])
         .then(() => window.location.reload())
     }

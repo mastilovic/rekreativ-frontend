@@ -1,4 +1,4 @@
-<div class="outer">
+<div class="outer" *ngIf="isUserLoggedIn else noData">
     <input placeholder="Teammate name" name="search" class="search">
   <table class="table">
     <tr>

@@ -1,6 +1,6 @@
 <div class="container">
-    <h1>Login with your account!</h1>
-    <form [formGroup]="loginForm">
+    <h1>Create your account!</h1>
+    <form [formGroup]="registerForm">
         <div class="form-group">
             <label>username</label>
             <input type="text" class="form-control" formControlName='username'>
@@ -9,7 +9,7 @@
             <label>password</label>
             <input type="password" class="form-control" formControlName='password'>
         </div>
-        <button class="btn btn-primary" (click)="onLogin()">Sign in</button>
-        <a class="register" [routerLink]="['/register']">Don't have an account? Register.</a>
+        <button class="btn btn-primary" (click)="onRegister()">Sign Up</button>
+        <a class="login" [routerLink]="['/login']">Already have an account? Login!</a>
     </form>
 </div>

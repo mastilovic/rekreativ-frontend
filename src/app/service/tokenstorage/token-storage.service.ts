@@ -23,12 +23,12 @@ export class TokenStorageService {
     localStorage.removeItem(USER_KEY);
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
-  
+
   public getUser(): any {
     return JSON.parse(localStorage.getItem(USER_KEY) as any);
   }
 
-  public removeToken(): void {
+  public removeTokenAndUser(): void {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
   }
@@ -37,7 +37,7 @@ export class TokenStorageService {
     if(this.getToken() !== null) {
       return true;
     }
-    
+
     return false;
   }
 }

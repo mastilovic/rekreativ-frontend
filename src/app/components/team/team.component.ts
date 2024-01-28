@@ -4,30 +4,32 @@ import {Subscription} from "rxjs";
 import {Team} from "../../models/team";
 
 @Component({
-  selector: 'app-team',
-  templateUrl: './team.component.html',
-  styleUrls: ['./team.component.css']
+    selector: 'app-team',
+    templateUrl: './team.component.html',
+    styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit, OnDestroy {
 
-  teams: Team[];
-  sub: Subscription = new Subscription();
+    teams: Team[];
+    sub: Subscription = new Subscription();
 
-  constructor(private teamService: TeamService) { }
+    constructor(private teamService: TeamService) {
+    }
 
-  ngOnInit(): void {
-    this.getTeams();
-  }
+    ngOnInit(): void {
+        this.getTeams();
+    }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+        console.log("team component destroyed")
+    }
 
-  getTeams(): void {
-    this.sub = this.teamService.getTeams().subscribe({
-      next: res => this.teams = res,
-      error: err => console.error(err),
-      complete: () => console.log("Completed getting teams")
-    });
-  }
+    getTeams(): void {
+        this.sub = this.teamService.getTeams().subscribe({
+            next: res => this.teams = res,
+            error: err => console.error(err),
+            complete: () => console.log("Completed getting teams")
+        });
+    }
 }

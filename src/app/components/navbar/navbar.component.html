@@ -2,19 +2,19 @@
   <div class="left">
     <button mat-button [routerLink]="['']">home</button>
     <button mat-button *ngIf="isUserLoggedIn" [routerLink]="['panel']">Admin Panel</button>
-<!--    <button mat-button *ngIf="isUserLoggedIn" [matMenuTriggerFor]="belowMenu">Admin Panel</button>-->
-<!--    <mat-menu #belowMenu="matMenu" yPosition="below">-->
-<!--      <button mat-menu-item [routerLink]="['teammate/create']">Teammate Panel</button>-->
-<!--      <button mat-menu-item [routerLink]="['team/create']">Team Panel</button>-->
-<!--      <button mat-menu-item [routerLink]="['match/create']">Matchup Panel</button>-->
-<!--    </mat-menu>-->
+<!--    Have login/register and logout as separate buttons, or have them as single button? -->
+    <button mat-raised-button *ngIf="!isUserLoggedIn" [routerLink]="['/login']">Login / Register</button>
+    <button mat-raised-button *ngIf="isUserLoggedIn" [routerLink]="['']" (click)="onLogout()">Logout</button>
   </div>
-  <div class="right">
-    <button mat-raised-button
-            [routerLink]="!isUserLoggedIn ? ['/login'] : []"
-            (click)="!isUserLoggedIn ? null : onLogout()"
-    >{{ !isUserLoggedIn ? 'Login' : 'Logout'}}
-    </button>
-  </div>
+
+<!--  Have login/register and logout as single button-->
+<!--  <div class="right">-->
+<!--    <button mat-raised-button-->
+<!--            [routerLink]="!isUserLoggedIn ? ['/login'] : []"-->
+<!--            (click)="!isUserLoggedIn ? null : onLogout()"-->
+<!--    >{{ !isUserLoggedIn ? 'Login / Register' : 'Logout'}}-->
+<!--    </button>-->
+<!--  </div>-->
 </div>
-<app-item-bar *ngIf="isUserLoggedIn"></app-item-bar>
+<!--<app-item-bar *ngIf="isUserLoggedIn"></app-item-bar>-->
+<app-item-bar></app-item-bar> <!-- removed ngIf so that everyone can see navbar items-->

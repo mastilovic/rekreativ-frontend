@@ -7,7 +7,12 @@ mat-drawer {
   width: 250px;
   background-color: #333;
   color: white;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+mat-drawer.mat-drawer-side {
+  box-shadow: none;
+  border-right: none;
 }
 
 mat-drawer-content {
@@ -32,6 +37,7 @@ mat-drawer-content {
   background-color: #333333; /* Button background color */
   color: white; /* Button text color */
   text-align: left;
+  margin-right: -1%;
 }
 
 .sidebar-button:hover {
@@ -74,3 +80,30 @@ mat-grid-list {
   background-color: #f4f4f4;
   color: #6c757d;
 }
+
+/*.heading-teammates-left {*/
+/*  width: 50%;*/
+/*  float: left;*/
+/*}*/
+
+/*.heading-teammates-right {*/
+/*  width: 50%;*/
+/*}*/
+
+/*.upper-heading-right {*/
+/*  position: absolute;*/
+/*  height: 20%;*/
+/*}*/
+
+/*.inner-list-content {*/
+/*  margin-top: 10%;*/
+/*}*/
+
+/*.upper-heading {*/
+/*  position: absolute;*/
+/*  height: 20%;*/
+/*}*/
+
+/*.inner-content {*/
+/*  margin-top: 10%;*/
+/*}*/

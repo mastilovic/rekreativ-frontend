@@ -14,12 +14,6 @@ export class CreateTeammateComponent implements OnInit, OnDestroy {
   createForm: FormGroup;
   sub: Subscription = new Subscription();
 
-  // id: number;
-  // name: string;
-  // totalGamesPlayed: number;
-  // wins: number;
-  // winRate: number;
-  // team: Team[];
   constructor(private teammateService: TeammateService,
               formBuilder: FormBuilder) {
     this.createForm = formBuilder.group({
@@ -32,10 +26,12 @@ export class CreateTeammateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    console.log("ngOnInit create teammate component")
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    console.log("create teammate component destroyed")
   }
 
   create() {

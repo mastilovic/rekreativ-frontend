@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TeammateService} from "../../service/teammate/teammate.service";
 import {Teammate} from "../../models/teammate";
-import {catchError, debounceTime, of, Subscription, switchMap, tap} from "rxjs";
+import {catchError, debounceTime, of, Subscription, switchMap} from "rxjs";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
@@ -22,9 +22,12 @@ export class TeammateDetailComponent implements OnInit, OnDestroy {
     this.sub = this.setupSearchControl();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("inside teammate-detail ngOnInit component")
+  }
 
   ngOnDestroy() {
+    console.log("inside teammate-detail ngOnDestroy component")
     console.log("IS SUB CLOSED: " + this.sub.closed)
     this.sub.unsubscribe()
     console.log("IS SUB CLOSED: " + this.sub.closed)

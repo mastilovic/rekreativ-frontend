@@ -29,6 +29,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TeammateDetailComponent } from './components/teammate-detail/teammate-detail.component';
 import {MatTableModule} from "@angular/material/table";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatTableModule} from "@angular/material/table";
     CreateTeammateComponent,
     AdminPanelComponent,
     DeleteTeammateComponent,
-    TeammateDetailComponent
+    TeammateDetailComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
