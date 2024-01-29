@@ -61,5 +61,4 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
     console.log('finishing onLogin method in login component')
   }
-
 }

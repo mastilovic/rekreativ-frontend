@@ -1,20 +1,20 @@
 <div class="main">
   <div class="left">
-    <button mat-button [routerLink]="['']">Home</button>
-    <button mat-button *ngIf="isUserLoggedIn" [routerLink]="['panel']">Admin Panel</button>
-<!--    Have login/register and logout as separate buttons, or have them as single button? -->
+    <a mat-button [routerLink]="['']">Home</a>
+    <a mat-button *ngIf="isUserLoggedIn" [routerLink]="['panel']">Admin Panel</a>
+    <!--    Have login/register and logout as separate buttons, or have them as single button? -->
     <button mat-raised-button *ngIf="!isUserLoggedIn" [routerLink]="['/login']">Login / Register</button>
     <button mat-raised-button *ngIf="isUserLoggedIn" [routerLink]="['']" (click)="onLogout()">Logout</button>
   </div>
 
-<!--  Have login/register and logout as single button-->
-<!--  <div class="right">-->
-<!--    <button mat-raised-button-->
-<!--            [routerLink]="!isUserLoggedIn ? ['/login'] : []"-->
-<!--            (click)="!isUserLoggedIn ? null : onLogout()"-->
-<!--    >{{ !isUserLoggedIn ? 'Login / Register' : 'Logout'}}-->
-<!--    </button>-->
-<!--  </div>-->
+  <!--  Have login/register and logout as single button-->
+  <!--  <div class="right">-->
+  <!--    <button mat-raised-button-->
+  <!--            [routerLink]="!isUserLoggedIn ? ['/login'] : []"-->
+  <!--            (click)="!isUserLoggedIn ? null : onLogout()"-->
+  <!--    >{{ !isUserLoggedIn ? 'Login / Register' : 'Logout'}}-->
+  <!--    </button>-->
+  <!--  </div>-->
 </div>
 <!--<app-item-bar *ngIf="isUserLoggedIn"></app-item-bar>-->
 <app-item-bar></app-item-bar> <!-- removed ngIf so that everyone can see navbar items-->

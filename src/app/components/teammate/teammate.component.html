@@ -1,5 +1,6 @@
 <div class="outer" *ngIf="isUserLoggedIn else unauthorized">
-    <input placeholder="Teammate name" name="search" class="search">
+    <input placeholder="Teammate name" name="search" class="search"
+           [formControl]="searchControl">
     <table class="table" *ngIf="teammates.length >= 0 else noData">
         <tr>
             <th>ID</th>
@@ -9,7 +10,7 @@
             <th>Win Rate</th>
             <th>Team</th>
         </tr>
-        <tr *ngFor='let teammate of teammates'>
+        <tr *ngFor='let teammate of filteredTeammates'>
             <td> {{ teammate.id }}</td>
             <td> {{ teammate.name }}</td>
             <td> {{ teammate.totalGamesPlayed }}</td>

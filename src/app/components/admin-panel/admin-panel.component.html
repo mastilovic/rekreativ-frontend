@@ -1,77 +1,78 @@
 <p>admin-panel works!</p>
 <mat-drawer-container class="example-container" *ngIf="isUserLoggedIn else noData">
-    <mat-drawer mode="side" opened>
-        <button mat-button class="sidebar-button" (click)="switchPanel('teammate')"
-                [class.selected]="currentPanel === 'teammate'">Teammate Panel
-        </button>
-        <button mat-button class="sidebar-button" (click)="switchPanel('team')"
-                [class.selected]="currentPanel === 'team'">Team Panel
-        </button>
-        <button mat-button class="sidebar-button" (click)="switchPanel('matchup')"
-                [class.selected]="currentPanel === 'matchup'">Matchup Panel
-        </button>
-    </mat-drawer>
-    <mat-drawer-content>
-        <!--    Teammate tab-->
-        <mat-tab-group *ngIf="currentPanel==='teammate'" [(selectedIndex)]="selectedTabIndex">
-            <mat-tab label="Create">
-                <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Update">
-                <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Delete">
-                <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
-            </mat-tab>
-            <mat-tab label="Find">
-                <h1>List of all teammates</h1>
-                <div class="admin-panel-teammate-table">
-                    <app-teammate class="inner-list-content" *ngIf="selectedTabIndex === 3"></app-teammate>
-                </div>
-                <h1>Find teammate by name</h1>
-                <div class="admin-panel-single-teammate">
-                    <!--                    <h1 class="upper-heading">Find teammate by name</h1>-->
-                    <app-teammate-detail *ngIf="selectedTabIndex === 3"></app-teammate-detail>
-                </div>
-            </mat-tab>
-        </mat-tab-group>
+  <mat-drawer mode="side" opened>
+    <a mat-button class="sidebar-button" (click)="switchPanel('teammate')"
+       [class.selected]="currentPanel === 'teammate'">Teammate Panel
+    </a>
+    <a mat-button class="sidebar-button" (click)="switchPanel('team')"
+       [class.selected]="currentPanel === 'team'">Team Panel
+    </a>
+    <a mat-button class="sidebar-button" (click)="switchPanel('matchup')"
+       [class.selected]="currentPanel === 'matchup'">Matches Panel
+    </a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!--    Teammate tab-->
+    <mat-tab-group *ngIf="currentPanel==='teammate'" [(selectedIndex)]="selectedTabIndex">
+      <mat-tab label="Create Teammate">
+        <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Update Teammate">
+        <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Delete Teammate">
+        <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
+      </mat-tab>
+      <mat-tab label="Find Teammates">
+        <h1>List of all teammates</h1>
+        <div class="admin-panel-teammate-table">
+          <app-teammate class="inner-list-content" *ngIf="selectedTabIndex === 3"></app-teammate>
+        </div>
+        <h1>Find teammate by name</h1>
+        <div class="admin-panel-single-teammate">
+          <!--                    <h1 class="upper-heading">Find teammate by name</h1>-->
+          <app-teammate-detail *ngIf="selectedTabIndex === 3"></app-teammate-detail>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
 
-        <!--  Team tab  -->
-        <mat-tab-group *ngIf="currentPanel==='team'" [(selectedIndex)]="selectedTabIndex">
-            <mat-tab label="Create">
-                <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Update">
-                <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Delete">
-                <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
-            </mat-tab>
-            <mat-tab label="Find">
-                <app-team *ngIf="selectedTabIndex === 3" class="admin-panel-teammate-table"></app-team>
-            </mat-tab>
-        </mat-tab-group>
+    <!--  Team tab  -->
+    <mat-tab-group *ngIf="currentPanel==='team'" [(selectedIndex)]="selectedTabIndex">
+      <mat-tab label="Create Team">
+        <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Update Team">
+        <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Delete Team">
+        <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
+      </mat-tab>
+      <mat-tab label="Find Teams">
+        <app-team *ngIf="selectedTabIndex === 3" class="admin-panel-teammate-table"></app-team>
+      </mat-tab>
+    </mat-tab-group>
 
-        <!--  Matchup tab  -->
-        <mat-tab-group *ngIf="currentPanel==='matchup'" [(selectedIndex)]="selectedTabIndex">
-            <mat-tab label="Create">
-                <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Update">
-                <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
-            </mat-tab>
-            <mat-tab label="Delete">
-                <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
-            </mat-tab>
-            <mat-tab label="Find">
-                <app-matches *ngIf="selectedTabIndex === 3" class="admin-panel-teammate-table"></app-matches>
-            </mat-tab>
-        </mat-tab-group>
-    </mat-drawer-content>
+    <!--  Matchup tab  -->
+    <mat-tab-group *ngIf="currentPanel==='matchup'" [(selectedIndex)]="selectedTabIndex">
+      <mat-tab label="Create Match">
+        <app-create-teammate *ngIf="selectedTabIndex === 0"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Update Match">
+        <app-create-teammate *ngIf="selectedTabIndex === 1"></app-create-teammate>
+      </mat-tab>
+      <mat-tab label="Delete Match">
+        <app-delete-teammate *ngIf="selectedTabIndex === 2"></app-delete-teammate>
+      </mat-tab>
+      <mat-tab label="Find Matches">
+        <app-matches *ngIf="selectedTabIndex === 3" class="admin-panel-teammate-table"></app-matches>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-drawer-content>
 </mat-drawer-container>
 
 <ng-template #noData>
-    <div>
-        <h1>401</h1>
-        Unauthorized access</div>
+  <div>
+    <h1>401</h1>
+    Unauthorized access
+  </div>
 </ng-template>
