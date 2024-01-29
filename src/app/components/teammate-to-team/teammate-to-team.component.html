@@ -1,0 +1,17 @@
+<div class="container" *ngIf="isUserLoggedIn; else unauthorized">
+  <form [formGroup]="addForm">
+    <div class="form-group">
+      <label>Team name</label>
+      <input type="text" class="form-control" formControlName = 'teamName'>
+    </div>
+    <div class="form-group">
+      <label>Player</label>
+      <input type="text" class="form-control" formControlName = 'teamMate'>
+    </div>
+    <button class="btn btn-primary" (click)="create()">Create</button>
+  </form>
+</div>
+
+<ng-template #unauthorized>
+  <div>Unauthorized access</div>
+</ng-template>

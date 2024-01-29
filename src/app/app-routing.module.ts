@@ -8,7 +8,7 @@ import {RoleComponent} from "./components/role/role.component";
 import {TeammateComponent} from "./components/teammate/teammate.component";
 import {TeamComponent} from "./components/team/team.component";
 import {MatchesComponent} from "./components/matches/matches.component";
-import {CreateTeammateComponent} from "./components/create-teammate/create-teammate.component";
+import {CreateTeammateComponent} from "./components/teammate-create/create-teammate.component";
 import {AdminPanelComponent} from "./components/admin-panel/admin-panel.component";
 import {RegisterComponent} from "./components/register/register.component";
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'users', component: UserComponent},
   {path: 'roles', component: RoleComponent},
-  {path: 'teammate', component: TeammateComponent},
+  {path: 'players', component: TeammateComponent},
   {path: 'team', component: TeamComponent},
   {path: 'matches', component: MatchesComponent},
   {path: 'panel', component: AdminPanelComponent},

@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
 
 @Component({
@@ -14,16 +12,17 @@ export class AdminPanelComponent implements OnInit {
   currentPanel: string = "teammate";
   isUserLoggedIn: boolean = false;
 
-  constructor(private tokenStorageService: TokenStorageService,
-              private router: Router) { }
+  constructor(private tokenStorageService: TokenStorageService) {
+  }
 
   ngOnInit(): void {
     console.log("calling ngOnInit in admin-panel component");
     this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
-    this.tokenStorageService.handleUnauthorizedAccess(this.isUserLoggedIn);
+    this.tokenStorageService.handleUnauthorizedAccess();
   }
 
   switchPanel(panel: string): void {
     this.currentPanel = panel;
+    this.selectedTabIndex = 0;
   }
 }

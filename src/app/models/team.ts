@@ -6,5 +6,5 @@ export interface Team {
   teammates: Teammate[];
   city: string;
   wins: number;
-  totalGamesPlayer: number;
+  totalGamesPlayed: number;
 }

@@ -1,12 +1,31 @@
-<p>team works!</p>
-
-<div *ngIf="isUserLoggedIn else unauthorized">
-  <mat-list *ngIf="teams !== undefined && teams.length > 0">
-    <mat-list-item  *ngFor = 'let team of teams'>{{ team | json }}</mat-list-item>
-  </mat-list>
+<h2>List of teams</h2>
+<div class="outer">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Team Name</th>
+      <th>Teammates</th>
+      <th>City</th>
+      <th>Wins</th>
+      <th>Total Games Played</th>
+    </tr>
+    <tr *ngFor='let team of teams'>
+      <td> {{ team.id }}</td>
+      <td> {{ team.teamName }}</td>
+      <td> {{ team.teammates | json }}</td>
+      <td> {{ team.city }}</td>
+      <td> {{ team.wins }}</td>
+      <td> {{ team.totalGamesPlayed }}</td>
+    </tr>
+  </table>
 </div>
+<!--<div>-->
+<!--  <mat-list *ngIf="teams !== undefined && teams.length > 0">-->
+<!--    <mat-list-item  *ngFor = 'let team of teams'>{{ team | json }}</mat-list-item>-->
+<!--  </mat-list>-->
+<!--</div>-->
 
 
 <ng-template #unauthorized>
-  <div>Unauthorized access!</div>
+  <div>No access!</div>
 </ng-template>

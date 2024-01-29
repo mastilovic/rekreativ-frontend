@@ -19,17 +19,22 @@ import { TeammateComponent } from './components/teammate/teammate.component';
 import { TeamComponent } from './components/team/team.component';
 import { MatchesComponent } from './components/matches/matches.component';
 import {MatMenuModule} from "@angular/material/menu";
-import { CreateTeammateComponent } from './components/create-teammate/create-teammate.component';
+import { CreateTeammateComponent } from './components/teammate-create/create-teammate.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatTabsModule} from "@angular/material/tabs";
-import { DeleteTeammateComponent } from './components/delete-teammate/delete-teammate.component';
+import { DeleteTeammateComponent } from './components/teammate-delete/delete-teammate.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TeammateDetailComponent } from './components/teammate-detail/teammate-detail.component';
 import {MatTableModule} from "@angular/material/table";
 import { RegisterComponent } from './components/register/register.component';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { MatchesDetailComponent } from './components/matches-detail/matches-detail.component';
+import { MatchesCreateComponent } from './components/matches-create/matches-create.component';
+import { TeamCreateComponent } from './components/team-create/team-create.component';
+import { TeammateToTeamComponent } from './components/teammate-to-team/teammate-to-team.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { RegisterComponent } from './components/register/register.component';
     AdminPanelComponent,
     DeleteTeammateComponent,
     TeammateDetailComponent,
-    RegisterComponent
+    RegisterComponent,
+    TeamDetailComponent,
+    MatchesDetailComponent,
+    MatchesCreateComponent,
+    TeamCreateComponent,
+    TeammateToTeamComponent
   ],
     imports: [
         BrowserModule,

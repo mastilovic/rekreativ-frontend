@@ -32,7 +32,7 @@ export class CreateTeammateComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log("ngOnInit create teammate component")
     this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
-    this.tokenStorageService.handleUnauthorizedAccess(this.isUserLoggedIn);
+    this.tokenStorageService.handleUnauthorizedAccess();
   }
 
   ngOnDestroy() {

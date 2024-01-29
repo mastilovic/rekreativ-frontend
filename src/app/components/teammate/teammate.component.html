@@ -1,7 +1,8 @@
-<div class="outer" *ngIf="isUserLoggedIn else unauthorized">
+<h2>List of Players</h2>
+<div class="outer">
     <input placeholder="Teammate name" name="search" class="search"
            [formControl]="searchControl">
-    <table class="table" *ngIf="teammates.length >= 0 else noData">
+    <table class="table">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -60,7 +61,7 @@
     <!--  </div>-->
 </div>
 <ng-template #unauthorized>
-    <div>Unauthorized access!</div>
+    <div>No access!</div>
 </ng-template>
 
 <ng-template #noData>

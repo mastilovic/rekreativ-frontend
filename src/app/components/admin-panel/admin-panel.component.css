@@ -56,19 +56,6 @@ mat-grid-list {
   height: 100%;
 }
 
-.admin-panel-teammate-table {
-  width: 50%;
-  display: flex;
-  float: left;
-}
-
-.admin-panel-single-teammate {
-  width: 50%;
-  display: flex;
-  float: right;
-  padding-left: 2%;
-}
-
 .sidebar-button {
   position: relative;
   float: right;
@@ -109,4 +96,57 @@ mat-grid-list {
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
+}
+
+
+.admin-panel-teammate-table {
+  width: 50%;
+  display: flex;
+  float: left;
+}
+
+.admin-panel-single-teammate {
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-left: 2%;
+}
+
+.admin-panel-team-table {
+  width: 50%;
+  display: flex;
+  float: left;
+}
+
+.admin-panel-single-team {
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-left: 2%;
+}
+
+.admin-panel-team-table {
+  width: 50%;
+  display: flex;
+  float: left;
+}
+
+.admin-panel-single-team {
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-left: 2%;
+}
+
+.admin-panel-matches-table {
+  width: 50%;
+  display: flex;
+  float: left;
+}
+
+.admin-panel-single-match {
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-left: 2%;
 }

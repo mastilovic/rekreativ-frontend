@@ -49,8 +49,8 @@ export class TokenStorageService {
     return false;
   }
 
-  handleUnauthorizedAccess(isUserLoggedIn: boolean) {
-    if(!isUserLoggedIn) {
+  handleUnauthorizedAccess() {
+    if(!this.getIsUserLogged()) {
       this.removeTokenAndUser();
       this.router.navigate([''])
           .then(() => window.location.reload())

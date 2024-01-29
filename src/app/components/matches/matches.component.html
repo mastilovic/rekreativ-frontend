@@ -1,10 +1,24 @@
-<p>matches works!</p>
-
-<div *ngIf="isUserLoggedIn; else unauthorized">
-    <mat-list *ngIf="matches !== undefined && matches.length > 0">
-        <mat-list-item *ngFor='let match of matches'>{{ match | json }}</mat-list-item>
-    </mat-list>
+<h2>List of recent matches</h2>
+<div class="outer">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Team A</th>
+      <th>Team A Score</th>
+      <th>Team B Score</th>
+      <th>Team B</th>
+      <th>Winner</th>
+    </tr>
+    <tr *ngFor='let match of matches'>
+      <td> {{ match.id }}</td>
+      <td> {{ match.teamA }}</td>
+      <td> {{ match.teamAScore }}</td>
+      <td> {{ match.teamBScore }}</td>
+      <td> {{ match.teamB }}</td>
+      <td> {{ match.winner }}</td>
+    </tr>
+  </table>
 </div>
 <ng-template #unauthorized>
-    <div>Unauthorized access!</div>
+    <div>No access!</div>
 </ng-template>

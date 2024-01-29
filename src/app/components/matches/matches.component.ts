@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatchesService} from "../../service/matches/matches.service";
 import {Observable, Subject, Subscription} from "rxjs";
 import {TokenStorageService} from "../../service/tokenstorage/token-storage.service";
+import {Match} from "../../models/match";
 
 @Component({
   selector: 'app-matches',
@@ -11,7 +12,7 @@ import {TokenStorageService} from "../../service/tokenstorage/token-storage.serv
 export class MatchesComponent implements OnInit, OnDestroy {
 
   isUserLoggedIn: boolean;
-  matches: any = [];
+  matches: Match[] = [];
   subscription: Subscription = new Subscription();
 
   constructor(private matchesService: MatchesService,

@@ -15,5 +15,5 @@
   flex-direction: column;
 }
 .outer {
-  width: 70%;
+  width: inherit;
 }

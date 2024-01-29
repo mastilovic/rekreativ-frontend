@@ -30,7 +30,7 @@ export class DeleteTeammateComponent implements OnInit, OnDestroy {
     console.log("inside ngOnInit delete-component")
     this.sub = this.findByName();
     this.isUserLoggedIn = this.tokenStorageService.getIsUserLogged();
-    this.tokenStorageService.handleUnauthorizedAccess(this.isUserLoggedIn);
+    this.tokenStorageService.handleUnauthorizedAccess();
   }
 
   ngOnDestroy() {
