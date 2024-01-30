@@ -11,13 +11,16 @@ permissions:
 
 jobs:
   ci:
-    #    if: github.event.pull_request.merged == true # running build job only after pr is merged
-    #    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Extract version from package.json
+        run: |
+          VERSION=$(grep -E '"version": "[^"]+"' package.json | awk -F'"' '{print $4}')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Set up Node
         uses: actions/setup-node@v3
@@ -36,7 +39,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: mastilovic/rk-frontend
-          tags: latest
+          tags: ${{ env.VERSION }}, latest
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
