@@ -2,26 +2,39 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Setup for local development 
 
-## Code scaffolding
+1. Install Docker Desktop
+2. Create profile on DockerHub
+3. Clone GitHub repository:
+  * `git clone https://github.com/salexdxd/rekreativ-frontend.git`
+4. Change directory to rekreativ-frontend:
+  * `cd rekreativ-frontend`
+5. Change directory to docker-backend-db and run docker compose:
+  * `docker-compose up`
+6. Return back to root of the project:
+* `cd ..`
+7. Run angular application in root of the project:
+* `ng serve`
+8. Access frontend of the application on `localhost:4200`
+  * default credentials:
+    * username: `admin`
+    * password: `admin`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Setup for running application on other devices
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Install Docker Desktop
+2. Create profile on DockerHub
+3. Clone GitHub repository:
+* `git clone https://github.com/salexdxd/rekreativ-frontend.git`
+4. Change directory to rekreativ-frontend:
+* `cd rekreativ-frontend`
+5. Run docker compose from root of the project:
+* `docker-compose up`
+6. Access frontend of the application on `localhost:4200`
+* default credentials:
+  * username: `admin`
+  * password: `admin`
+7. Link to backend repository: https://github.com/salexdxd/rekreativ-startup
