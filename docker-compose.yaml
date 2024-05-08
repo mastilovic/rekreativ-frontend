@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app:
+  rk-backend:
     image: mastilovic/rekreativ:latest
     hostname: rekreativ
     ports:
@@ -26,7 +26,7 @@ services:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
-  frontend:
+  rk-frontend:
     image: mastilovic/rk-frontend:latest
     hostname: rk-frontend
     ports:

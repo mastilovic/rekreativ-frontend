@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app:
+  rekreativ-backend:
     image: mastilovic/rekreativ:latest
     hostname: rekreativ
     ports:

@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Change directory to rekreativ-frontend:
   * `cd rekreativ-frontend`
 5. Change directory to docker-backend-db and run docker compose:
-  * `docker-compose up`
+  * `cd docker-backend-db && docker-compose up`
 6. Return back to root of the project:
 * `cd ..`
 7. Run angular application in root of the project:
